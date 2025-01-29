@@ -60,3 +60,12 @@
   - At lines 43-56, added logic that checks for an inventory value outside the minimum/maximum inventory range and returns an error message if outside of range/invalid value
 - In AddOutsourcedPartController.java:
   - At lines 44-57, added logic that checks for an inventory value outside the minimum/maximum inventory range and returns an error message if outside of range/invalid value 
+
+### H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
+#### •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
+#### •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
+#### •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+
+- In EnufPartsValidator.java:
+  - At lines 37-39, added validation using the isValidInv method from Part.java that checks if adding and updating a product lowers any of the parts' inventory below the minimum
+- Error messages for inventory amounts below the minimum or above the maximum were created in part G in AddInhousePartController.java (lines 44-52) and AddOutsourcedPartController.java (lines 45-53)
