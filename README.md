@@ -69,3 +69,9 @@
 - In EnufPartsValidator.java:
   - At lines 37-39, added validation using the isValidInv method from Part.java that checks if adding and updating a product lowers any of the parts' inventory below the minimum
 - Error messages for inventory amounts below the minimum or above the maximum were created in part G in AddInhousePartController.java (lines 44-52) and AddOutsourcedPartController.java (lines 45-53)
+
+### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+
+- In PartTest.java:
+  - At lines 160-176, created two unit tests that tested minimum and maximum inventory values and their getter/setter methods
+
