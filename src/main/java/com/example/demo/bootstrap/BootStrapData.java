@@ -48,6 +48,8 @@ public class BootStrapData implements CommandLineRunner {
             frame.setInv(100);
             frame.setPrice(50.0);
             frame.setId(1);
+            frame.setMinInv(0);
+            frame.setMaxInv(999);
             inhousePartRepository.save(frame);
             InhousePart inPart=null;
             inhouseParts=(List<InhousePart>) inhousePartRepository.findAll();
@@ -60,6 +62,8 @@ public class BootStrapData implements CommandLineRunner {
             buttons.setInv(500);
             buttons.setPrice(30.0);
             buttons.setId(2);
+            buttons.setMinInv(0);
+            buttons.setMaxInv(999);
             inhousePartRepository.save(buttons);
             inPart=null;
             inhouseParts=(List<InhousePart>) inhousePartRepository.findAll();
@@ -72,6 +76,8 @@ public class BootStrapData implements CommandLineRunner {
             thumbsticks.setInv(500);
             thumbsticks.setPrice(10.0);
             thumbsticks.setId(3);
+            thumbsticks.setMinInv(0);
+            thumbsticks.setMaxInv(999);
             inhousePartRepository.save(thumbsticks);
             inPart=null;
             inhouseParts=(List<InhousePart>) inhousePartRepository.findAll();
@@ -92,6 +98,8 @@ public class BootStrapData implements CommandLineRunner {
             circuitBoard.setInv(100);
             circuitBoard.setPrice(60.0);
             circuitBoard.setId(100);
+            circuitBoard.setMinInv(0);
+            circuitBoard.setMaxInv(999);
             outsourcedPartRepository.save(circuitBoard);
             OutsourcedPart outPart=null;
             outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -107,6 +115,8 @@ public class BootStrapData implements CommandLineRunner {
             chargingCable.setInv(100);
             chargingCable.setPrice(10.0);
             chargingCable.setId(101);
+            chargingCable.setMinInv(0);
+            chargingCable.setMaxInv(999);
             outsourcedPartRepository.save(chargingCable);
             outPart=null;
             outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();

@@ -35,3 +35,28 @@
 - Created BuyProductController.java and all lines were written to handle the logic behind the Buy Now button. If product exists and has an inventory greater than 0, the product's inventory will decrement by 1 and will route to a purchase success page. If product is not in stock or doesn't exist, will route to a purchase failed page
 - Created buyProductSuccess.html template and all lines were written to display message that a product purchase was successful
 - Created buyProductFailed.html template and all lines were written to display message that a product purchase failed
+
+### G.  Modify the parts to track maximum and minimum inventory by doing the following:
+####  •  Add additional fields to the part entity for maximum and minimum inventory.
+####  •  Modify the sample inventory to include the maximum and minimum fields.
+####  •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+####  •  Rename the file the persistent storage is saved to.
+####  •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+
+- In Part.java:
+  - At lines 31-34, created minInv and maxInv variables and used similar @Min annotation to ensure both values remain at or above 0
+  - At lines 44-58, added minInv and maxInv parameters to both constructors
+  - At lines 93-99, added getter and setter methods for the minInv and maxInv variables
+  - At lines 101-103, created method that determines if inventory value falls within the minimum/maximum inventory range
+- In BootStrapData.java:
+  - At lines 51-52, 65-66, 79-80, 101-102, and 118-119, set minimum and maximum inventory values for each part in sample inventory
+- In InhousePartForm.html:
+  - At lines 26-30, added fields for minimum and maximum inventory in the inhouse part form
+- In OutsourcedPartForm.html:
+  - At lines 25-29, added fields for minimum and maximum inventory in the outsourced part form
+- In application.properties:
+  - At line 6, renamed the database to controllers-r-us-db
+- In AddInhousePartController.java:
+  - At lines 43-56, added logic that checks for an inventory value outside the minimum/maximum inventory range and returns an error message if outside of range/invalid value
+- In AddOutsourcedPartController.java:
+  - At lines 44-57, added logic that checks for an inventory value outside the minimum/maximum inventory range and returns an error message if outside of range/invalid value 
