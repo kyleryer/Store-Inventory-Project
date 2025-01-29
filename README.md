@@ -75,3 +75,6 @@
 - In PartTest.java:
   - At lines 160-176, created two unit tests that tested minimum and maximum inventory values and their getter/setter methods
 
+### J.  Remove the class files for any unused validators in order to clean your code.
+
+- Deleted DeletePartValidator.java (all lines) due to it having 0 usages
