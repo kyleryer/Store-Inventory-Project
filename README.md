@@ -1,4 +1,20 @@
-### C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+# Store Inventory Project
+
+## Overview
+This is a Java coding exercise that involves updating an existing web application to meet company requirements regarding their inventory management.
+This project gave me practice working with Java as well as the Spring framework. Instructions for this exercise are included below.
+
+## Scenario
+You are working for a company that licenses and customizes a software application to keep track of inventory in stores. 
+Your job as a software developer is to customize this application to meet a specific customer’s needs. 
+You will choose any type of customer you would like, but it must sell a product composed of parts. 
+An example of products versus parts would be a customer that’s a bicycle shop: a bicycle is a product, and a set of two matching wheels is a part (do not use the bicycle shop example in your project).
+You have been provided with a Spring application with a Java backend and a generic HTML user interface to use in the design and development of the system.
+
+## Instructions
+### *In the instructions listed below, my changes made and locations of the changes are listed below each instruction.*
+
+### A.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
 
 - The following changes were all made in mainscreen.html:
   - At line 14, changed the webpage title to "Controllers R Us"
@@ -6,13 +22,13 @@
   - At line 21, changed the Parts header to "Controller Parts"
   - At line 53, changed the Products header to "Controller Types"
 
-### D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+### B.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
 - Created about.html file and all lines were written to create the content for the "About" page
 - Created AboutController.java and all lines were written to map the /about URL to corresponding about.html template
 - Added new line at line 20 in mainscreen.html that added an "About Us" button that allows for navigation to the "About" page from the main screen
 
-### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+### C.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
 - The following changes were all made in BootStrapData.java:
   - At line 3, imported InhousePart class
@@ -22,7 +38,7 @@
   - At lines 87-122, created 2 outsourced parts in the same manner as the inhouse parts and passed these parts to a OuthousePartRepository object
   - At lines 124-134, created 5 products using constructors and added them to product repository
 
-### F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+### D.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 ####   •  The “Buy Now” button must be next to the buttons that update and delete products.
 ####   •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 ####  •  Display a message that indicates the success or failure of a purchase.
@@ -33,7 +49,7 @@
 - Created buyProductSuccess.html template and all lines were written to display message that a product purchase was successful
 - Created buyProductFailed.html template and all lines were written to display message that a product purchase failed
 
-### G.  Modify the parts to track maximum and minimum inventory by doing the following:
+### E.  Modify the parts to track maximum and minimum inventory by doing the following:
 ####  •  Add additional fields to the part entity for maximum and minimum inventory.
 ####  •  Modify the sample inventory to include the maximum and minimum fields.
 ####  •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
@@ -58,7 +74,7 @@
 - In AddOutsourcedPartController.java:
   - At lines 44-57, added logic that checks for an inventory value outside the minimum/maximum inventory range and returns an error message if outside of range/invalid value 
 
-### H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
+### F.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 #### •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 #### •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 #### •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
@@ -67,11 +83,11 @@
   - At lines 37-39, added validation using the isValidInv method from Part.java that checks if adding and updating a product lowers any of the parts' inventory below the minimum
 - Error messages for inventory amounts below the minimum or above the maximum were created in part G in AddInhousePartController.java (lines 44-52) and AddOutsourcedPartController.java (lines 45-53)
 
-### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+### G.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
 - In PartTest.java:
   - At lines 160-176, created two unit tests that tested minimum and maximum inventory values and their getter/setter methods
 
-### J.  Remove the class files for any unused validators in order to clean your code.
+### H.  Remove the class files for any unused validators in order to clean your code.
 
 - Deleted DeletePartValidator.java (all lines) due to it having 0 usages
