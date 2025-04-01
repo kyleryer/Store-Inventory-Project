@@ -1,6 +1,3 @@
-# WESTERN GOVERNORS UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
-
 ### C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
 
 - The following changes were all made in mainscreen.html:
